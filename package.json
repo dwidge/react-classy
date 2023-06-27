@@ -1,0 +1,31 @@
+{
+  "name": "@dwidge/react-classy",
+  "version": "0.1.0",
+  "description": "Lite styled components for React",
+  "keywords": [],
+  "author": "DWJ",
+  "license": "BSL-1.0",
+  "exports": {
+    "./*": "./lib/*",
+    ".": "./lib/index.tsx"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "start": "servey src=src/index.tsx env=REACT_APP_ dir=public port=3000",
+    "build": "buildy src=src/index.tsx env=REACT_APP_ dir=public out=build",
+    "serve": "pnpx http-server build -o -p3000",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@dwidge/buildy": "^0.1.6",
+    "@types/react": "^18.2.12",
+    "@types/react-dom": "^18.2.5",
+    "typescript": "^5.1.3"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
