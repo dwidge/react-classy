@@ -5,20 +5,20 @@
 import React from "react";
 
 export const classy =
-  (Component: keyof JSX.IntrinsicElements | React.ComponentType<any>) =>
+  (Component: keyof React.JSX.IntrinsicElements | React.ComponentType<any>) =>
   (className: string = "", style: React.CSSProperties = {}) =>
     React.forwardRef(
       (props: React.ComponentPropsWithRef<typeof Component>, ref) => (
         <Component
           {...props}
           ref={ref}
-          className={className + " " + props.className ?? ""}
+          className={className + " " + props.className}
           style={{
             ...style,
             ...(props.style ?? {}),
           }}
         />
-      )
+      ),
     );
 
 export const div = classy("div");
