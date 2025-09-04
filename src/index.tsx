@@ -1,11 +1,26 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
-import "./index.css";
+// Copyright DWJ 2023.
+// Distributed under the Boost Software License, Version 1.0.
+// https://www.boost.org/LICENSE_1_0.txt
 
-const root = ReactDOM.createRoot(document.getElementById("root")!);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+import React from "react";
+
+export const classy =
+  (Component: keyof React.JSX.IntrinsicElements | React.ComponentType<any>) =>
+  (className: string = "", style: React.CSSProperties = {}) =>
+    React.forwardRef(
+      (props: React.ComponentPropsWithRef<typeof Component>, ref) => (
+        <Component
+          {...props}
+          ref={ref}
+          className={className + " " + props.className}
+          style={{
+            ...style,
+            ...(props.style ?? {}),
+          }}
+        />
+      ),
+    );
+
+export const div = classy("div");
+export const img = classy("img");
+export const canvas = classy("canvas");
