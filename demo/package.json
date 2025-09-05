@@ -1,6 +1,6 @@
 {
   "name": "@dwidge/react-classy-demo",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Lite styled components for React",
   "keywords": [],
   "author": "DWJ",
@@ -29,6 +29,7 @@
     "typescript": "^5.8.3"
   },
   "peerDependencies": {
+    "@dwidge/react-classy": "^0.1.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

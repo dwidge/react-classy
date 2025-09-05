@@ -1,6 +1,5 @@
-import React from "react";
 import { div } from "@dwidge/react-classy";
-import "@dwidge/react-classy/flex.css";
+import React from "react";
 
 const App: React.FC<{}> = () => {
   return (
